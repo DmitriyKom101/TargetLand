@@ -16,6 +16,8 @@ import com.tagetland.service.landService;
 public class AppTest 
 {
     private landService landService;
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 600;
 
     @Before
     public void setup() {
@@ -48,7 +50,7 @@ public void testCalculateAreas() {
 
 @Test
 public void testMarkLand() {
-    int[][] land = new int[landService.WIDTH][landService.HEIGHT];
+    int[][] land = new int[WIDTH][HEIGHT];
     String input = "0 292 399 307,10 10 20 20";
     
     // Mark  land based on the input.
@@ -63,8 +65,8 @@ public void testMarkLand() {
 
 @Test
 public void testfilled() {
-    int[][] land = new int[landService.WIDTH][landService.HEIGHT];
-    boolean[][] visited = new boolean[landService.WIDTH][landService.HEIGHT];
+    int[][] land = new int[WIDTH][HEIGHT];
+    boolean[][] visited = new boolean[WIDTH][HEIGHT];
     String input = "0 292 399 307,10 10 20 20";
     
     // Mark land
@@ -77,12 +79,12 @@ public void testfilled() {
 
 @Test
 public void testEmptyland() {
-    int[][] land = new int[landService.WIDTH][landService.HEIGHT];
-    boolean[][] visited = new boolean[landService.WIDTH][landService.HEIGHT];
+    int[][] land = new int[WIDTH][HEIGHT];
+    boolean[][] visited = new boolean[WIDTH][HEIGHT];
 
     // No  land, so the entire land is .
     int area = landService.filled(land, visited, 0, 0);
-    assertEquals(landService.WIDTH * landService.HEIGHT, area);  // All the land is 
+    assertEquals(WIDTH * HEIGHT, area);  // All the land is 
 }
 
 }

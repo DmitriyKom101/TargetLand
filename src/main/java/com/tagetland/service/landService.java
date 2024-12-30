@@ -5,8 +5,8 @@ import java.util.*;
 public class landService {
 
 
-    public final int WIDTH = 400;
-    public final int HEIGHT = 600;
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 600;
 
     // Calculates the areas of unmarked land based on input rectangles.
     public List<Integer> calcArea(String input) {
