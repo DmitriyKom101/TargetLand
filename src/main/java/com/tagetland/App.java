@@ -31,7 +31,6 @@ public class App implements CommandLineRunner
             try {
 
                 List<Integer> landArea = landService.calcArea(sanitizeInput(input));
-                System.out.println("Land area:");
                 landArea.forEach(area -> System.out.print(area + " "));
                 System.out.println();
             } catch (Exception e) {
@@ -53,7 +52,6 @@ public class App implements CommandLineRunner
             String[] coordinates = rect.trim().split("\\s+");
             if (coordinates.length == 4) {
                 sanitized.append(String.join(" ", coordinates)).append(",");
-                System.out.println(sanitized);
             } else {
                 throw new IllegalArgumentException("Each rectangle must have exactly four coordinates.");
             }
@@ -61,7 +59,6 @@ public class App implements CommandLineRunner
 
         // Remove trailing comma
         if (sanitized.length() > 0 && sanitized.charAt(sanitized.length() - 1) == ',') {
-            System.out.println(sanitized.length());
             sanitized.setLength(sanitized.length() - 1);  // Remove the last comma
         }
 
