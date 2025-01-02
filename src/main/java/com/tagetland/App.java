@@ -1,18 +1,16 @@
 package com.tagetland;
 
-import java.util.List;
-import java.util.Scanner;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.tagetland.service.landService;
-
 @SpringBootApplication
-public class App implements CommandLineRunner
+public class App //implements CommandLineRunner
 {
-    public static void main( String[] args )
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
+    }
+
+   /* public static void main( String[] args )
     {
         SpringApplication.run(App.class, args);
     }
@@ -40,7 +38,7 @@ public class App implements CommandLineRunner
         }
 
         scanner.close();
-    }
+    }*/  
     public String sanitizeInput(String input) {
         // Remove double quotes
         input = input.replace("\"", "");

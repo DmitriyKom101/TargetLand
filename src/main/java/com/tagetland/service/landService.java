@@ -1,7 +1,8 @@
 package com.tagetland.service;
 
 import java.util.*;
-
+import org.springframework.stereotype.Service;
+@Service
 public class landService {
 
 
@@ -9,7 +10,7 @@ public class landService {
     private static final int HEIGHT = 600;
 
     // Calculates the areas of unmarked land based on input rectangles.
-    public List<Integer> calcArea(String input) {
+    public List<Integer> calcArea(List<String> input) {
         int[][] land = new int[WIDTH][HEIGHT];
         markLand(land, input);
         return computeAreas(land);
@@ -17,8 +18,11 @@ public class landService {
 
     //Marks the land based on the input rectangles.
 
-    public void markLand(int[][] land, String input) {
-        String[] rectangles = input.split(",");
+    public void markLand(int[][] land, List<String> input) {
+        String[] rectangles= {};
+        for(int i = 0; i < input.size(); i++) {
+            rectangles = input.get(i).split(",");
+         }
         // Mark the specified rectangle area as land
         for (String rect : rectangles) {
             String[] coordinates = rect.trim().split(" ");
